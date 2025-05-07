@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  xgboost-api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models
+    restart: unless-stopped
+    environment:
+      - PORT=8000
+      # Add additional environment variables if needed
